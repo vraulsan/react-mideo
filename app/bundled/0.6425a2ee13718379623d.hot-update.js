@@ -1,0 +1,20 @@
+webpackHotUpdate(0,{
+
+/***/ 302:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var React = __webpack_require__(21);
+
+function TitleComponent(props) {
+  return 'Title Component where we will display and modify the titles';
+}
+
+module.exports = TitleComponent;
+
+/***/ })
+
+})
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hcHAvY29tcG9uZW50cy9UaXRsZUNvbXBvbmVudC5qcz83OTk4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsIlRpdGxlQ29tcG9uZW50IiwicHJvcHMiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUFBLElBQUlBLFFBQVEsbUJBQUFDLENBQVEsRUFBUixDQUFaOztBQUdBLFNBQVNDLGNBQVQsQ0FBeUJDLEtBQXpCLEVBQWdDO0FBQzlCLFNBQVEsNkRBQVI7QUFDRDs7QUFFREMsT0FBT0MsT0FBUCxHQUFpQkgsY0FBakIsQyIsImZpbGUiOiIwLjY0MjVhMmVlMTM3MTgzNzk2MjNkLmhvdC11cGRhdGUuanMiLCJzb3VyY2VzQ29udGVudCI6WyJ2YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xuXG5cbmZ1bmN0aW9uIFRpdGxlQ29tcG9uZW50IChwcm9wcykge1xuICByZXR1cm4gKCdUaXRsZSBDb21wb25lbnQgd2hlcmUgd2Ugd2lsbCBkaXNwbGF5IGFuZCBtb2RpZnkgdGhlIHRpdGxlcycpXG59XG5cbm1vZHVsZS5leHBvcnRzID0gVGl0bGVDb21wb25lbnQ7XG5cblxuLy8gV0VCUEFDSyBGT09URVIgLy9cbi8vIC4vYXBwL2NvbXBvbmVudHMvVGl0bGVDb21wb25lbnQuanMiXSwic291cmNlUm9vdCI6IiJ9
