@@ -2,6 +2,7 @@ var React = require('react');
 var OMDbHelpers = require('../utils/OMDbHelpers');
 var TitleComponent = require('../components/TitleComponent');
 var OMDbHelpers = require('../utils/OMDbHelpers');
+var TitleExpandedContComp = require('../containers/TitleExpandedContComp');
 
 var TitleContainer = React.createClass({
   getInitialState: function () {
@@ -19,29 +20,22 @@ var TitleContainer = React.createClass({
     this.details = {}
   },
   handleExpandTitle: function (e) {
-    if (this.state.isExpanded === false) {
-      OMDbHelpers.searchDetails(this.info.imdbID)
-        .then(function (results) {
-          this.details = results.data;
-          this.setState({
-            isExpanded: true
-          })
-        }.bind(this))
-    } else {
-      this.setState({
-        isExpanded: false
-      })
-    }
+    this.state.isExpanded === false
+      ? this.setState({
+          isExpanded: true
+        })
+      : this.setState({
+          isExpanded: false
+        })
   },
   render: function () {
-    return (
-        <TitleComponent
+    return this.state.isExpanded === false
+      ? <TitleComponent
           info={this.info}
-          isExpanded={this.state.isExpanded}
-          onExpandTitle={this.handleExpandTitle}
-          details={this.details}
-           />
-    );
+          onExpandTitle={this.handleExpandTitle} />
+      : <TitleExpandedContComp
+          info={this.info}
+          onExpandTitle={this.handleExpandTitle}/>
   }
 });
 

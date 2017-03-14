@@ -6,7 +6,7 @@ var SearchFormComponent = require('../components/SearchFormComponent')
 var HeaderContainer = React.createClass({
   getInitialState: function () {
     return {
-      header: 'Start organizing your media, search for something'
+      header: ' '
     }
   },
   render: function () {
