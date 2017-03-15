@@ -7,6 +7,8 @@ var SearchFormContainer = React.createClass({
   getInitialState: function () {
     return {
       titleToSearch: '',
+      yearToSearch: '',
+      typeToSearch: 'movie',
       results: false
     }
   },
@@ -15,9 +17,23 @@ var SearchFormContainer = React.createClass({
       titleToSearch: e.target.value
     });
   },
+  handleUpdateYear: function (e) {
+    this.setState({
+      yearToSearch: e.target.value
+    });
+  },
+  handleChangeType: function (e) {
+    this.setState({
+      typeToSearch: e.target.value
+    });
+
+  },
   handleSubmitForm: function (e) {
     e.preventDefault();
-    OMDbHelpers.searchResults(this.state.titleToSearch)
+    if (this.state.titleToSearch === '')  {
+      return null
+    }
+    OMDbHelpers.searchResults(this.state.titleToSearch, this.state.yearToSearch, this.state.typeToSearch)
       .then(function (results) {
         this.setState({
           results: results.data
@@ -28,8 +44,10 @@ var SearchFormContainer = React.createClass({
     return (
       <div>
         <SearchFormComponent
-          onTypeIn={this.handleUpdateTitle}
-          onSubmitForm={this.handleSubmitForm} />
+          onTypeInTitle={this.handleUpdateTitle}
+          onTypeInYear={this.handleUpdateYear}
+          onSubmitForm={this.handleSubmitForm}
+          onChangeType={this.handleChangeType} />
         <ResultsComponent
           results={this.state.results} />
       </div>

@@ -10,8 +10,8 @@ function SearchFormComponent(props) {
           <div className="main main-raised">
             <div className="section section-basic">
               <div className="container">
-                <strong><h2 style={styles.headColor}>Media Query</h2></strong>
-                <h4>What are you thinking about . . .</h4>
+                <strong><h2 style={styles.headColor}>Midea Query</h2></strong>
+                <h4>Start organizing your media</h4>
                 <form
                 onSubmit={props.onSubmitForm}>
                   <div className="col-sm-4">
@@ -21,7 +21,7 @@ function SearchFormComponent(props) {
                       type="text"
                       className="form-control"
                       placeholder="Movie or show"
-                      onChange={props.onTypeIn}/>
+                      onChange={props.onTypeInTitle}/>
                     </div>
                   </div>
                   <div className="col-sm-4">
@@ -30,16 +30,16 @@ function SearchFormComponent(props) {
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Year of release"/>
+                        placeholder="Year of release"
+                        onChange={props.onTypeInYear}/>
                     </div>
                   </div>
                   <div className="col-sm-4">
                     <div className="form-group label-floating has-success" style={styles.positionField}>
-                      <label className="control-label">Success input</label>
-                      <input type="text" value="Success" className="form-control" />
-                      <span className="form-control-feedback">
-                        <i className="material-icons">done</i>
-                      </span>
+                      <select onChange={props.onChangeType} className="form-control">
+                        <option defaultValue value="movie">Movie</option>
+                        <option value="series">Series</option>
+                      </select>
                     </div>
                   </div>
                   <button type="submit" className="btn btn-warning pull-right" style={styles.marginButton}> Search </button>
